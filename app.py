@@ -5,8 +5,8 @@ from transformers import DistilBertTokenizerFast, DistilBertForSequenceClassific
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Load model + tokenizer
-model = DistilBertForSequenceClassification.from_pretrained("saved_model")
-tokenizer = DistilBertTokenizerFast.from_pretrained("saved_model")
+model = DistilBertForSequenceClassification.from_pretrained("ManoRakshithaa/factuality-distilbert")
+tokenizer = DistilBertTokenizerFast.from_pretrained("ManoRakshithaa/factuality-distilbert")
 
 model.to(DEVICE)
 model.eval()

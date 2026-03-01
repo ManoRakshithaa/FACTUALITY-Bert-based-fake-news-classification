@@ -41,12 +41,16 @@ The model was trained on a comprehensive Fake News dataset from Kaggle.
 
 ---
 
-## Project Structure
+## 📂 Project Structure
 
+To keep the repository lightweight, model weights are fetched dynamically from the **HuggingFace Hub** at runtime.
+
+```bash
 FACTUALITY-Bert-based-fake-news-classification
-┣ 📜 app.py              # Streamlit frontend & inference logic
-┣ 📜 requirements.txt    # Project dependencies
-┗ 📜 README.md           # Documentation
+├── 📄 app.py              # Streamlit frontend & inference logic
+├── 📄 requirements.txt    # Project dependencies
+└── 📄 README.md           # Documentation
+```
 
 ## Deployment Architecture
 
@@ -66,3 +70,4 @@ Inference: On-the-fly inference using the Transformers API on the Streamlit serv
 ## Author
 Mano Rakshitha
 AI Engineering Student
+www.linkedin.com/in/mano-rakshitha

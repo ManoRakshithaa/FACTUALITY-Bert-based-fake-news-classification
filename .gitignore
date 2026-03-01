@@ -1,0 +1,15 @@
+# Virtual environment
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Model + data
+saved_model/
+Data/
+*.pt
+
+# Mac
+.DS_Store

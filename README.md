@@ -5,11 +5,11 @@
 
 ---
 
-**Factuality** is a high-performance deep learning application built to identify misinformation. By leveraging a fine-tuned **DistilBERT** transformer, it provides real-time news verification with the speed of a lightweight architecture and the precision of modern NLP.
+**Factuality** is a deep learning application built to identify misinformation. By leveraging a fine-tuned **DistilBERT** transformer, it provides real-time news verification with the speed of a lightweight architecture and the precision of modern NLP.
 
 ---
 
-## 🧠 Project Overview
+## Project Overview
 This project demonstrates a full-cycle NLP workflow—from preprocessing raw Kaggle datasets to deploying a fine-tuned transformer model for public inference.
 
 * **Objective:** Classify news articles as ✅ **Real** or ❌ **Fake**.
@@ -53,7 +53,7 @@ FACTUALITY-Bert-based-fake-news-classification
 └── 📄 README.md           # Documentation
 ```
 
-## 🚀 Deployment Architecture
+## Deployment Architecture
 
 The system is designed with a decoupled architecture to ensure the repository remains lightweight while maintaining high performance.
 
@@ -63,7 +63,7 @@ The system is designed with a decoupled architecture to ensure the repository re
 
 ---
 
-## 🔮 Future Roadmap
+## Future Roadmap
 
 I am actively working on expanding the capabilities of **Factuality**. The following features are prioritized for upcoming releases:
 

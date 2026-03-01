@@ -5,7 +5,11 @@
 
 ---
 
-**Factuality** is a deep learning application built to identify misinformation. By leveraging a fine-tuned **DistilBERT** transformer, it provides real-time news verification with the speed of a lightweight architecture and the precision of modern NLP.
+**Factuality** is a deep learning–based fake news detection system built using DistilBERT, a lightweight transformer model from Hugging Face. The model was fine-tuned on the WELFake dataset (Kaggle) and evaluated on the ISOT Fake News Dataset to test cross-dataset generalization and real-world robustness.
+
+The project focuses on building a high-accuracy binary classifier that distinguishes between real and fake news articles using contextual language understanding rather than simple keyword matching. The model achieved ~98–99% accuracy during evaluation.
+
+The trained model is deployed using Streamlit, allowing users to input news article text and instantly receive a prediction (Real or Fake). The application is hosted online and loads the model directly from Hugging Face for scalable deployment.
 
 ---
 

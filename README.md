@@ -79,9 +79,10 @@ I am actively working on expanding the capabilities of **Factuality**. The follo
 
 ### 👩‍💻 Author
 
-**Mano Rakshitha** *AI Engineering Student*
+**Mano Rakshitha** 
+*AI Engineering Student*
 
-Building production-ready NLP systems and exploring the frontiers of Deep Learning.
+Building production-ready ML systems and exploring the frontiers of Deep Learning.
 
 ## Connect with me:
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mano-rakshitha) 

@@ -6,10 +6,11 @@ DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Load model + tokenizer
 model = DistilBertForSequenceClassification.from_pretrained(
-    "ManoRakshithaa/factuality-distilbert"
+    "ManoRakshitha/factuality-distilbert"
 )
+
 tokenizer = DistilBertTokenizerFast.from_pretrained(
-    "ManoRakshithaa/factuality-distilbert"
+    "ManoRakshitha/factuality-distilbert"
 )
 
 model.to(DEVICE)

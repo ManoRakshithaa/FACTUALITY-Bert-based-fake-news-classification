@@ -72,15 +72,14 @@ I am actively working on expanding the capabilities of **Factuality**. The follo
 - [ ] **REST API:** Build a standalone API endpoint for third-party application integration.
 
 ---
----
 
-## 👩‍💻 Author
+### 👩‍💻 Author
 
 **Mano Rakshitha** *AI Engineering Student*
 
 Building production-ready NLP systems and exploring the frontiers of Deep Learning.
 
-### Connect with me:
+## Connect with me:
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mano-rakshitha) 
 [![GitHub](https://img.shields.io/badge/GitHub-181717.svg?logo=github&logoColor=white)](https://github.com/ManoRakshithaa)
 [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-FFD21E?logoColor=black)](https://huggingface.co/ManoRakshitha)

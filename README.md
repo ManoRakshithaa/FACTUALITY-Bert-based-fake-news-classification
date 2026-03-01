@@ -1,167 +1,68 @@
-Factuality — BERT-Based Fake News Classification
+# 🛡️ Factuality: BERT-Based Fake News Classification
 
-<p align="center">
-<b>Real-time Fake News Detection using Fine-Tuned DistilBERT</b>
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_svg)](https://factuality-bert-based-fake-news-classification.streamlit.app/)
+[![Model on HF](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model%20Hub-orange)](https://huggingface.co/ManoRakshitha/factuality-distilbert)
+
+A real-time deep learning solution designed to combat misinformation. **Factuality** leverages a fine-tuned DistilBERT transformer to classify news text with high precision.
 
 
+---
 
+## 🧠 Project Overview
+This project demonstrates a full-cycle NLP workflow—from preprocessing raw Kaggle datasets to deploying a fine-tuned transformer model for public inference.
 
-Built with Transformers • PyTorch • Streamlit • HuggingFace
-</p>
+* **Objective:** Classify news articles as ✅ **Real** or ❌ **Fake**.
+* **Core Tech:** DistilBERT (`distilbert-base-uncased`) for a balance of speed and accuracy.
+* **Deployment:** Seamless integration between HuggingFace Hub (Model) and Streamlit Cloud (UI).
 
-<p align="center">
-<img src="https://img.shields.io/badge/Python-3.10-blue?logo=python" alt="Python">
-<img src="https://img.shields.io/badge/HuggingFace-Transformers-yellow?logo=huggingface" alt="Transformers">
-<img src="https://img.shields.io/badge/PyTorch-DeepLearning-red?logo=pytorch" alt="PyTorch">
-<img src="https://img.shields.io/badge/Deployed-Streamlit-red?logo=streamlit" alt="Streamlit">
-</p>
+## Tech Stack
 
-🌐 Live Demo
+| Category | Technology |
+| :--- | :--- |
+| **Language** | Python 3.10 |
+| **ML Framework** | PyTorch, HuggingFace Transformers |
+| **Architecture** | DistilBERT |
+| **Web UI** | Streamlit |
+| **Model Hosting** | HuggingFace Model Hub |
 
-🔗 Try the App Here: 👉 https://YOUR_STREAMLIT_LINK_HERE
+---
 
-🧠 Project Overview
+## Dataset & Pipeline
+The model was trained on a comprehensive Fake News dataset from Kaggle. 
 
-Factuality is a deep learning-based web application designed to combat misinformation by classifying news text as:
+### Preprocessing Workflow:
+1.  **Text Cleaning:** Stripping noise and special characters.
+2.  **Tokenization:** Utilizing the specialized DistilBERT tokenizer.
+3.  **Standardization:** Padding and truncation to a `max_length` of 256.
+4.  **Training:** Fine-tuned using `CrossEntropyLoss` on a GPU-enabled environment via `AdamW` optimizer.
 
-✅ Real
+> [!IMPORTANT]
+> Dataset files are not included in this repository due to licensing restrictions.
 
-❌ Fake
+---
 
-The system utilizes a fine-tuned DistilBERT transformer model, trained on a comprehensive Kaggle fake news dataset. This project serves as a full-cycle demonstration of modern NLP workflows.
-
-Key Highlights:
-
-NLP Preprocessing: Advanced cleaning and tokenization.
-
-Transformer Fine-tuning: Optimization of DistilBERT for binary classification.
-
-Seamless Deployment: Model hosting on HuggingFace Hub and frontend on Streamlit Cloud.
-
-🏗 Tech Stack
-
-Category
-
-Technology
-
-Language
-
-Python 3.10
-
-ML Framework
-
-PyTorch, HuggingFace Transformers
-
-Model Architecture
-
-DistilBERT (distilbert-base-uncased)
-
-Web Framework
-
-Streamlit
-
-Data Source
-
-Kaggle
-
-Model Hosting
-
-HuggingFace Model Hub
-
-📚 Dataset
-
-The model was trained on a publicly available Fake News dataset from Kaggle containing labeled real and fake news articles.
-
-Preprocessing Pipeline:
-
-Text Cleaning: Removal of special characters and noise.
-
-Tokenization: Using the specialized DistilBERT tokenizer.
-
-Standardization: Padding and truncation to a max_length of 256.
-
-Training: Fine-tuned using CrossEntropyLoss on a GPU-enabled environment.
-
-[!IMPORTANT]
-
-Dataset files are not included in this repository due to licensing restrictions.
-
-🏋️ Model Training Details
-
-The core of this project is a distilbert-base-uncased model fine-tuned for sequence classification.
-
-Optimizer: AdamW
-
-Loss Function: CrossEntropyLoss
-
-Library: PyTorch + HuggingFace Transformers
-
-View the model on HuggingFace Hub: 👉 ManoRakshitha/factuality-distilbert
-
-📂 Project Structure
+## Project Structure
 
 FACTUALITY-Bert-based-fake-news-classification
 ┣ 📜 app.py              # Streamlit frontend & inference logic
 ┣ 📜 requirements.txt    # Project dependencies
 ┗ 📜 README.md           # Documentation
 
+## Deployment Architecture
 
-The model weights are loaded dynamically from the HuggingFace Hub at runtime to keep the repository lightweight.
-
-⚙️ Installation (Run Locally)
-
-1️⃣ Clone the repository
-
-git clone [https://github.com/ManoRakshithaa/FACTUALITY-Bert-based-fake-news-classification.git](https://github.com/ManoRakshithaa/FACTUALITY-Bert-based-fake-news-classification.git)
-cd FACTUALITY-Bert-based-fake-news-classification
-
-
-2️⃣ Install dependencies
-
-pip install -r requirements.txt
-
-
-3️⃣ Run the Streamlit app
-
-streamlit run app.py
-
-
-🎯 Features
-
-Real-time Classification: Get instant results upon pasting news content.
-
-Clean UI: Minimalist and intuitive user interface.
-
-High Performance: Powered by a lightweight DistilBERT architecture for fast inference.
-
-Hardware Agnostic: Automatically detects and uses GPU if available, otherwise defaults to CPU.
-
-🚀 Deployment Architecture
-
-Model Hosting: Weights and configuration reside on the HuggingFace Model Hub.
-
+Model Hosting: Weights reside on HuggingFace Model Hub.
 Frontend: Streamlit Cloud pulls the code from GitHub.
+Inference: On-the-fly inference using the Transformers API on the Streamlit server.
 
-Inference: When a user submits text, the app fetches the model via the Transformers API for local inference on the Streamlit server.
+## Future Roadmap
+- Add prediction confidence scores (%).
 
-🔮 Future Improvements
+- Integrate probability bar visualizations.
 
-[ ] Add prediction confidence scores (percentage).
+- Cross-model benchmarking (RoBERTa vs. ALBERT).
 
-[ ] Integrate probability bar visualizations.
+- Build a standalone REST API.
 
-[ ] Compare performance across multiple models (RoBERTa, ALBERT).
-
-[ ] Expand the dataset for better cross-domain generalization.
-
-[ ] Build a standalone REST API version.
-
-👩‍💻 Author
-
-Mano Rakshitha AI Engineering Student Building production-ready NLP systems and exploring the frontiers of Deep Learning.
-
-<p align="center">
-⭐️ If you find this project helpful, give it a star!
-</p>
-
-
+## Author
+Mano Rakshitha
+AI Engineering Student

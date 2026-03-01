@@ -1,7 +1,7 @@
 # 🛡️ Factuality
 ### BERT-Powered Fake News Classification
 
-[ **[Live Demo](https://factuality-bert-based-fake-news-classification.streamlit.app/)** ] · [ **[HuggingFace Model](https://huggingface.co/ManoRakshitha/factuality-distilbert)** ] · [ **[Dataset](https://www.kaggle.com/)** ]
+[ **[Live Demo](https://factuality-bert-based-fake-news-classification.streamlit.app/)** ] · [ **[HuggingFace Model](https://huggingface.co/ManoRakshitha/factuality-distilbert)** ] · [ **[Dataset](https://www.kaggle.com/datasets/studymart/welfake-dataset-for-fake-news)** ]
 
 ---
 

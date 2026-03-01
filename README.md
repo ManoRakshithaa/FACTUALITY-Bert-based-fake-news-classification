@@ -1,10 +1,11 @@
-# 🛡️ Factuality: BERT-Based Fake News Classification
+# 🛡️ Factuality
+### BERT-Powered Fake News Classification
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_svg)](https://factuality-bert-based-fake-news-classification.streamlit.app/)
-[![Model on HF](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model%20Hub-orange)](https://huggingface.co/ManoRakshitha/factuality-distilbert)
+[ **[Live Demo](https://factuality-bert-based-fake-news-classification.streamlit.app/)** ] · [ **[HuggingFace Model](https://huggingface.co/ManoRakshitha/factuality-distilbert)** ] · [ **[Dataset](https://www.kaggle.com/)** ]
 
-A real-time deep learning solution designed to combat misinformation. **Factuality** leverages a fine-tuned DistilBERT transformer to classify news text with high precision.
+---
 
+**Factuality** is a high-performance deep learning application built to identify misinformation. By leveraging a fine-tuned **DistilBERT** transformer, it provides real-time news verification with the speed of a lightweight architecture and the precision of modern NLP.
 
 ---
 
@@ -52,22 +53,35 @@ FACTUALITY-Bert-based-fake-news-classification
 └── 📄 README.md           # Documentation
 ```
 
-## Deployment Architecture
+## 🚀 Deployment Architecture
 
-Model Hosting: Weights reside on HuggingFace Model Hub.
-Frontend: Streamlit Cloud pulls the code from GitHub.
-Inference: On-the-fly inference using the Transformers API on the Streamlit server.
+The system is designed with a decoupled architecture to ensure the repository remains lightweight while maintaining high performance.
 
-## Future Roadmap
-- Add prediction confidence scores (%).
+* **Model Hosting:** Trained weights and configurations are hosted on the **HuggingFace Model Hub** to avoid large file storage in Git.
+* **Frontend:** The interactive UI is deployed via **Streamlit Cloud**, which automatically syncs with this GitHub repository.
+* **Inference:** When a user inputs text, the application fetches the model using the `transformers` API for real-time inference on the Streamlit server.
 
-- Integrate probability bar visualizations.
+---
 
-- Cross-model benchmarking (RoBERTa vs. ALBERT).
+## 🔮 Future Roadmap
 
-- Build a standalone REST API.
+I am actively working on expanding the capabilities of **Factuality**. The following features are prioritized for upcoming releases:
 
-## Author
-Mano Rakshitha
-AI Engineering Student
-www.linkedin.com/in/mano-rakshitha
+- [ ] **Prediction Confidence:** Display exact probability percentages for every classification.
+- [ ] **Interactive Visuals:** Integrate probability bar charts to visualize model "certainty."
+- [ ] **REST API:** Build a standalone API endpoint for third-party application integration.
+
+---
+---
+
+## 👩‍💻 Author
+
+**Mano Rakshitha** *AI Engineering Student*
+
+Building production-ready NLP systems and exploring the frontiers of Deep Learning.
+
+### Connect with me:
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mano-rakshitha) 
+[![GitHub](https://img.shields.io/badge/GitHub-181717.svg?logo=github&logoColor=white)](https://github.com/ManoRakshithaa)
+[![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-FFD21E?logoColor=black)](https://huggingface.co/ManoRakshitha)
+

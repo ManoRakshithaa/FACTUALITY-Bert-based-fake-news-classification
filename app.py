@@ -1,46 +1,67 @@
 import streamlit as st
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
-from transformers import DistilBertTokenizerFast, DistilBertForSequenceClassification
 
-DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
-# Load model + tokenizer
-model = DistilBertForSequenceClassification.from_pretrained(
-    "ManoRakshitha/factuality-distilbert"
+# ---------------------------
+# Page Config
+# ---------------------------
+st.set_page_config(
+    page_title="Factuality Detector",
+    page_icon="🧠",
+    layout="centered"
 )
 
-tokenizer = DistilBertTokenizerFast.from_pretrained(
-    "ManoRakshitha/factuality-distilbert"
-)
+st.title("🧠 AI Factuality Detector")
+st.write("This model predicts whether a statement is factual or not.")
 
-model.to(DEVICE)
-model.eval()
+# ---------------------------
+# Load Model from HuggingFace
+# ---------------------------
 
-st.set_page_config(page_title="Fake News Detector", layout="centered")
+@st.cache_resource
+def load_model():
+    model_name = "ManoRakshitha/factuality-distilbert"
 
-st.title("📰 Fake News Detector")
-st.write("DistilBERT trained on WELFake → tested on ISOT")
+    tokenizer = AutoTokenizer.from_pretrained(
+        model_name,
+        subfolder="saved_model"
+    )
 
-text = st.text_area("Paste news article text here:")
+    model = AutoModelForSequenceClassification.from_pretrained(
+        model_name,
+        subfolder="saved_model"
+    )
+
+    return tokenizer, model
+
+
+tokenizer, model = load_model()
+
+# ---------------------------
+# User Input
+# ---------------------------
+
+user_input = st.text_area("Enter a statement:")
 
 if st.button("Analyze"):
-    if text.strip() == "":
+    if user_input.strip() == "":
         st.warning("Please enter some text.")
     else:
         inputs = tokenizer(
-            text,
+            user_input,
             return_tensors="pt",
             truncation=True,
-            padding=True,
-            max_length=256
+            padding=True
         )
-        inputs = {k: v.to(DEVICE) for k, v in inputs.items()}
 
         with torch.no_grad():
             outputs = model(**inputs)
-            pred = torch.argmax(outputs.logits, dim=1).item()
+            prediction = torch.argmax(outputs.logits, dim=1).item()
 
-        if pred == 1:
-            st.error("🚨 Fake News 🚨")
+        # Assuming:
+        # 0 = Not Factual
+        # 1 = Factual
+        if prediction == 1:
+            st.success("✅ This statement appears to be FACTUAL.")
         else:
-            st.success("✅ Real News ✅")
+            st.error("❌ This statement appears to be NOT FACTUAL.")

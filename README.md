@@ -16,7 +16,7 @@ The trained model is deployed using Streamlit, allowing users to input news arti
 ## Project Overview
 This project demonstrates a full-cycle NLP workflow—from preprocessing raw Kaggle datasets to deploying a fine-tuned transformer model for public inference.
 
-* **Objective:** Classify news articles as ✅ **Real** or ❌ **Fake**.
+* **Objective:** Classify news articles as **Real** or **Fake**.
 * **Core Tech:** DistilBERT (`distilbert-base-uncased`) for a balance of speed and accuracy.
 * **Deployment:** Seamless integration between HuggingFace Hub (Model) and Streamlit Cloud (UI).
 

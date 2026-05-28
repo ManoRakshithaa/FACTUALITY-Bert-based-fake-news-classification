@@ -21,7 +21,6 @@ This project demonstrates a full-cycle NLP workflow—from preprocessing raw Kag
 * **Deployment:** Seamless integration between HuggingFace Hub (Model) and Streamlit Cloud (UI).
 
 ## Tech Stack
-
 | Category | Technology |
 | :--- | :--- |
 | **Language** | Python 3.10 |
@@ -29,6 +28,16 @@ This project demonstrates a full-cycle NLP workflow—from preprocessing raw Kag
 | **Architecture** | DistilBERT |
 | **Web UI** | Streamlit |
 | **Model Hosting** | HuggingFace Model Hub |
+| **Containerization** | Docker |
+
+## Docker Deployment
+Pull and run the app locally using Docker:
+
+```bash
+docker pull ManoRakshitha/factuality-app:v1
+docker run -p 8501:8501 ManoRakshitha/factuality-app:v1
+```
+Then open http://localhost:8501
 
 ---
 

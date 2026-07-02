@@ -27,6 +27,8 @@ print("Loading WELFake (train)...")
 wel = pd.read_csv("data/wel_fake/WELFake_Dataset.csv")
 wel["text"] = wel["title"].fillna("") + " " + wel["text"].fillna("")
 wel = wel[["text", "label"]]
+wel["label"] = 1 - wel["label"]  # WELFake: 1=fake→0, 0=real→1
+
 
 print("Loading ISOT (test)...")
 fake_isot = pd.read_csv("data/isot/Fake.csv")

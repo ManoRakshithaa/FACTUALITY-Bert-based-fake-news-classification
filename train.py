@@ -32,8 +32,8 @@ print("Loading ISOT (test)...")
 fake_isot = pd.read_csv("data/isot/Fake.csv")
 true_isot = pd.read_csv("data/isot/True.csv")
 
-fake_isot["label"] = 1
-true_isot["label"] = 0
+fake_isot["label"] = 0
+true_isot["label"] = 1
 
 isot = pd.concat([fake_isot, true_isot])
 isot = isot[["text", "label"]]
